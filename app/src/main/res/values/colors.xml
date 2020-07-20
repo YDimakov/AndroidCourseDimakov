@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="flagRed">#EF2112</color>
+    <color name="flagBlue">#1025DC</color>
+    <color name="flagGreen">#1FC11A</color>
+    <color name="flagWhite">#FFFFFF</color>
+    <color name="flagYellow">#F8E010</color>
+    <color name="flagBlue2">#3F91EA</color>
+    <color name="black">#000000</color>
+</resources>

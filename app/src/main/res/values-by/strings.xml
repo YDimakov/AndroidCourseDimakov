@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Лакалізаванае прыкладанне</string>
+    <string name="name_country" translatable="false">Беларусь</string>
+    <string name="name_country_horizontal" translatable="false">Гарызантальная Беларусь</string>
+</resources>

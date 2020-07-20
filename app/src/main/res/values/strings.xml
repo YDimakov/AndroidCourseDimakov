@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Lokalisierte anwendung</string>
+    <string name="name_country" translatable="false">Deutschland</string>
+    <string name="name_country_horizontal" translatable="false">Horizontales Deutschland</string>
+</resources>

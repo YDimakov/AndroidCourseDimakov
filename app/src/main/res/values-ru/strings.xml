@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Локализованное приложение</string>
+    <string name="name_country" translatable="false">Россия</string>
+    <string name="name_country_horizontal" translatable="false">Горизонтальная Россия</string>
+</resources>

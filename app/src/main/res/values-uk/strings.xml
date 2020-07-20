@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Локалізований додаток</string>
+    <string name="name_country" translatable="false">Україна</string>
+    <string name="name_country_horizontal" translatable="false">Горизонтальна Україна</string>
+</resources>
