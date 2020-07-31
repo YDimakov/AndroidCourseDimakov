@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FacebookLinearLayout</string>
+    <string name="android">Android</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="username">Username</string>
+    <string name="address">Address</string>
+    <string name="description">Description</string>
+    <string name="derections">DERECTIONS</string>
+    <string name="call">CALL</string>
+    <string name="save">SAVE</string>
+    <string name="website">WEBSITE</string>
+    <string name="postsAmount">320</string>
+    <string name="followersAmount">12K</string>
+    <string name="followingAmount">2</string>
+</resources>

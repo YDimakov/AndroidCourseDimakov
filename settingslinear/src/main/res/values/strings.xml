@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Settings</string>
+    <string name="yd"> Yaroslav Dimakov</string>
+    <string name="sounds">  Sounds</string>
+    <string name="devise">  Devise &amp; connectivity</string>
+    <string name="wireless">  Wireless &amp; networks</string>
+    <string name="security">  Security &amp; privacy</string>
+    <string name="display">  Display</string>
+    <string name="storage">  Storage</string>
+    <string name="apps">  Apps</string>
+    <string name="battery">  Battery</string>
+    <string name="notifications">  Notifications</string>
+    <string name="users">  Users &amp; accounts</string>
+    <string name="system">  System</string>
+</resources>
