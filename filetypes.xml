@@ -1,0 +1,12 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping ext="webp" type="Image" />
+      <mapping pattern="menu" type="PLAIN_TEXT" />
+      <mapping pattern="activity_two" type="XML" />
+      <mapping pattern="editing_contacts" type="XML" />
+      <mapping pattern="added_contacts" type="XML" />
+      <mapping ext="xml " type="XML" />
+    </extensionMap>
+  </component>
+</application>
