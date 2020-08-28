@@ -6,6 +6,7 @@
       <mapping pattern="activity_two" type="XML" />
       <mapping pattern="editing_contacts" type="XML" />
       <mapping pattern="added_contacts" type="XML" />
+      <mapping pattern="my_view" type="XML" />
       <mapping ext="xml " type="XML" />
     </extensionMap>
   </component>
