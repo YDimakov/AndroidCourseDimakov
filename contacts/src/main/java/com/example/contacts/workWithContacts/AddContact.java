@@ -31,9 +31,9 @@ public class AddContact extends AppCompatActivity implements View.OnClickListene
         сheckBoxPhone = findViewById(R.id.checkBoxPhone);
         сheckBoxEmail = findViewById(R.id.checkBoxEmail);
         exitButton = findViewById(R.id.buttonBackAddContact);
-
         addButton.setOnClickListener(this);
         exitButton.setOnClickListener(this);
+
     }
 
     @Override

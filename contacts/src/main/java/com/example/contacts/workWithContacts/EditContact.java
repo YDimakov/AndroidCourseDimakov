@@ -19,6 +19,8 @@ public class EditContact extends AppCompatActivity implements View.OnClickListen
     private ImageButton exitButton;
     private String name;
     private String emailOrPhone;
+    private Intent intent;
+    private Intent intentEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class EditContact extends AppCompatActivity implements View.OnClickListen
         editName = findViewById(R.id.textNameEdit);
         editPhoneOrEmail = findViewById(R.id.textPhoneOrEmailEdit);
         buttonEdit = findViewById(R.id.SaveButtonEdit);
-        Intent intent = getIntent();
+        intent = getIntent();
         name = intent.getStringExtra("name");
         emailOrPhone = intent.getStringExtra("emailOrPhone");
         editName.setText(name);
@@ -41,7 +43,7 @@ public class EditContact extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.SaveButtonEdit:
-                Intent intentEdit = new Intent();
+                intentEdit = new Intent();
                 intentEdit.putExtra("editName", editName.getText().toString());
                 intentEdit.putExtra("editPhoneOrEmail", editPhoneOrEmail.getText().toString());
                 setResult(RESULT_OK, intentEdit);

@@ -29,12 +29,18 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     private String editName;
     private Boolean flagBoolean;
     private int positionId;
+    private Intent intentEdit;
+    private Intent intentAdd;
+    private ArrayList<Contact> arrayListContact;
+    private final int REQUEST_CODE_MAIN_ACTIVITY_ADD_CONTACT = 1;
+    private final int REQUEST_CODE_MAIN_ACTIVITY_EDIT_CONTACT = 2;
 
-    ArrayList<Contact> arrayListContact = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        arrayListContact = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
         initRecyclerView();
@@ -43,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         buttonActivityAddContacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentAdd = new Intent(MainActivity.this, AddContact.class);
-                startActivityForResult(intentAdd, 1);
+                intentAdd = new Intent(MainActivity.this, AddContact.class);
+                startActivityForResult(intentAdd, REQUEST_CODE_MAIN_ACTIVITY_ADD_CONTACT);
 
             }
         });
@@ -61,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                if (data != null) {
+        if (resultCode == RESULT_OK) {
+            if (data != null) {
+                if (requestCode == REQUEST_CODE_MAIN_ACTIVITY_ADD_CONTACT) {
                     name = data.getStringExtra("name");
                     phoneOrEmail = data.getStringExtra("phoneOrEmail");
                     flagBoolean = data.getBooleanExtra("flag", false);
@@ -72,35 +78,26 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                     } else {
                         arrayListContact.add(new Contact(R.drawable.ic_baseline_contact_mail_24, name, phoneOrEmail));
                     }
-                    recyclerViewAdapter.notifyDataSetChanged();
-                }
-            }
-        } else if (requestCode == 2) {
-            if (resultCode == RESULT_OK) {
-                if (data != null) {
+                } else if (requestCode == REQUEST_CODE_MAIN_ACTIVITY_EDIT_CONTACT) {
                     editName = data.getStringExtra("editName");
                     editPhoneOrEmail = data.getStringExtra("editPhoneOrEmail");
-                    for (int i = 0; i <= arrayListContact.size(); i++) {
-                        if (i == positionId) {
-                            arrayListContact.get(i).setName(editName);
-                            arrayListContact.get(i).setPhoneOrEmail(editPhoneOrEmail);
-                            recyclerViewAdapter.notifyDataSetChanged();
-                        }
-                    }
+                    arrayListContact.get(positionId).setName(editName);
+                    arrayListContact.get(positionId).setPhoneOrEmail(editPhoneOrEmail);
                 }
             }
         }
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 
 
     @Override
     public void onNoteClick(int position) {
         positionId = position;
-        Intent intent = new Intent(MainActivity.this, EditContact.class);
-        intent.putExtra("name", arrayListContact.get(position).getName());
-        intent.putExtra("emailOrPhone", arrayListContact.get(position).getPhoneOrEmail());
-        intent.putExtra("id", position);
-        startActivityForResult(intent, 2);
+        intentEdit = new Intent(MainActivity.this, EditContact.class);
+        intentEdit.putExtra("name", arrayListContact.get(position).getName());
+        intentEdit.putExtra("emailOrPhone", arrayListContact.get(position).getPhoneOrEmail());
+        intentEdit.putExtra("id", position);
+        startActivityForResult(intentEdit, REQUEST_CODE_MAIN_ACTIVITY_EDIT_CONTACT);
     }
 }
 

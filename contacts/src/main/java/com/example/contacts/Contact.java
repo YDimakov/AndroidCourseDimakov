@@ -5,6 +5,12 @@ public class Contact {
     private String name;
     private String phoneOrEmail;
 
+    public Contact(int photoContact, String name, String phoneOrEmail) {
+        this.photoContact = photoContact;
+        this.name = name;
+        this.phoneOrEmail = phoneOrEmail;
+    }
+
 
     public int getPhotoContact() {
         return photoContact;
@@ -28,10 +34,5 @@ public class Contact {
         return phoneOrEmail;
     }
 
-    public Contact(int photoContact, String name, String phoneOrEmail) {
 
-        this.photoContact = photoContact;
-        this.name = name;
-        this.phoneOrEmail = phoneOrEmail;
-    }
 }
