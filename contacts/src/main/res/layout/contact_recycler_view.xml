@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/card_view">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/photoContact"
+            android:textColor="@color/colorBlack"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewPhoneOrEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewName"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="11dp"
+            android:layout_toEndOf="@+id/photoContact"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/photoContact"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:padding="4dp" />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/clearButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="359dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/ic_baseline_edit_24" />
+
+        <ImageButton
+            android:id="@+id/clearButton"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="359dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/ic_baseline_clear_24" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
