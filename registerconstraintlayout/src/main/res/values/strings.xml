@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RegisterConstraintLayout</string>
+    <string name="sing">Sing in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="just">*Just sing in</string>
+</resources>
