@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Custom View</string>
+    <string name="snackbar">SnackBar</string>
+    <string name="toast">Toast</string>
+</resources>
