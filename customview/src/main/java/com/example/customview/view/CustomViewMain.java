@@ -17,15 +17,18 @@ import com.example.customview.R;
 
 public class CustomViewMain extends View {
 
+    private final static int DIVIDING_A_CIRCLE_INTO_DEGREES_0 = 0;
+    private final static int DIVIDING_A_CIRCLE_INTO_DEGREES_90 = 90;
+    private final static int DIVIDING_A_CIRCLE_INTO_DEGREES_180 = 180;
+    private final static int DIVIDING_A_CIRCLE_INTO_DEGREES_270 = 270;
+
     private RectF rectF;
     private int cx, cy, radiusSmallCircle;
     private float eventGetX, eventGetY, radiusCircle;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_0 = 0;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_60 = 60;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_90 = 90;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_180 = 180;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_270 = 270;
-    private final int DIVIDING_A_CIRCLE_INTO_DEGREES_360 = 360;
+    private boolean leftTopCorner;
+    private boolean rightTopCorner;
+    private boolean leftBottomCorner;
+    private boolean rightBottomCorner;
     private Paint paintGreen;
     private Paint paintRed;
     private Paint paintYellow;
@@ -33,10 +36,6 @@ public class CustomViewMain extends View {
     private Paint paintCircleSmall;
     private Paint neutralColor;
     private onTouchListener onTouchActionListener;
-    private boolean leftTopCorner;
-    private boolean rightTopCorner;
-    private boolean leftBottomCorner;
-    private boolean rightBottomCorner;
 
     public CustomViewMain(Context context) {
         super(context);
@@ -79,11 +78,6 @@ public class CustomViewMain extends View {
 
     public void setOnTouchActionListener(onTouchListener onTouchActionListener) {
         this.onTouchActionListener = onTouchActionListener;
-    }
-
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
     }
 
     @Override
