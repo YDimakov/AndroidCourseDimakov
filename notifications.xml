@@ -1,6 +1,14 @@
 <application>
   <component name="NotificationConfiguration">
-    <notification groupId="Build sync orphan modules" displayType="NONE" shouldLog="false" />
-    <notification groupId="Gradle Notification Group" displayType="NONE" shouldLog="false" />
+    <notification groupId="Build sync orphan modules" displayType="NONE" />
+    <notification groupId="Debugger messages" displayType="TOOL_WINDOW" />
+    <notification groupId="Dump Threads Group" />
+    <notification groupId="Find in Path" displayType="TOOL_WINDOW" />
+    <notification groupId="Gradle Import" displayType="STICKY_BALLOON" />
+    <notification groupId="Gradle Notification Group" displayType="NONE" />
+    <notification groupId="Indexing" />
+    <notification groupId="Plugins AutoSwitch" />
+    <notification groupId="Plugins updates" displayType="STICKY_BALLOON" />
+    <notification groupId="Render error panel notifications" />
   </component>
 </application>
