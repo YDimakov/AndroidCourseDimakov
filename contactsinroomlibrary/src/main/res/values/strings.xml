@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="new_contact">Новый контакт</string>
+    <string name="new_name">Введите имя</string>
+    <string name="new_phone_or_email">Введите данные</string>
+    <string name="phone">Телефон</string>
+    <string name="email">Почта</string>
+    <string name="text_start_activity">Список пуст!\n Добавьте контакт</string>
+</resources>
