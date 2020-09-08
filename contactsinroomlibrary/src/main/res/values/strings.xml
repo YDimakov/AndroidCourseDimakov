@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">Contacts</string>
-    <string name="new_contact">Новый контакт</string>
+    <string name="new_contact">Добавить контакт</string>
+    <string name="edit_contact">Изменение контакта</string>
     <string name="new_name">Введите имя</string>
     <string name="new_phone_or_email">Введите данные</string>
     <string name="phone">Телефон</string>
     <string name="email">Почта</string>
     <string name="text_start_activity">Список пуст!\n Добавьте контакт</string>
+    <string name="update">Обновить</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="enter_name">Введите имя!</string>
+    <string name="enter_contact_info">Введите информацию о пользователе!</string>
+    <string name="enter_email">Введите свою почту!</string>
+    <string name="enter_phone">Введите свой телефон!</string>
 </resources>
