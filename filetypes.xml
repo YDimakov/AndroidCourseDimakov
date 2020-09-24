@@ -4,13 +4,13 @@
       <mapping ext="webp" type="Image" />
       <mapping ext="main.kts" type="Kotlin" />
       <mapping pattern="menu" type="PLAIN_TEXT" />
-      <mapping pattern="contactsDB-journal" type="PLAIN_TEXT" />
-      <mapping pattern="contactsDB" type="PLAIN_TEXT" />
       <mapping pattern="ContactDB" type="PLAIN_TEXT" />
-      <mapping pattern="activity_two" type="XML" />
-      <mapping pattern="added_contacts" type="XML" />
-      <mapping pattern="my_view" type="XML" />
+      <mapping pattern="contactsDB" type="PLAIN_TEXT" />
+      <mapping pattern="contactsDB-journal" type="PLAIN_TEXT" />
       <mapping pattern="editing_contacts" type="XML" />
+      <mapping pattern="added_contacts" type="XML" />
+      <mapping pattern="activity_two" type="XML" />
+      <mapping pattern="my_view" type="XML" />
       <mapping ext="xml " type="XML" />
     </extensionMap>
   </component>
