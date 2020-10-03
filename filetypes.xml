@@ -5,6 +5,7 @@
       <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="main.kts" type="Kotlin" />
       <mapping pattern="menu" type="PLAIN_TEXT" />
+      <mapping pattern="historyExternalStorage" type="PLAIN_TEXT" />
       <mapping pattern="ContactDB" type="PLAIN_TEXT" />
       <mapping pattern="contactsDB" type="PLAIN_TEXT" />
       <mapping pattern="contactsDB-journal" type="PLAIN_TEXT" />
