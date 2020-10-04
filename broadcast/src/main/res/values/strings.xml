@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Broadcast</string>
+    <string name="info">Перед началом работы приложения выберите тип хранилища на вашем устройстве.</string>
+    <string name="next">Далее</string>
+    <string name="ок">Ок</string>
+    <string name="nextInfo">В своей реализации я отслеживаю 3 события:\n 1) Событие связанное с включением и отключением кнопки \"Режима полёта\".\n
+    2) Событие связанное с отслеживанием изменения времени.\n 3) Событие связанное с отслеживаением изменения часового пояса.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
