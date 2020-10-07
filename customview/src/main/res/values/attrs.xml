@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="StyleView">
+        <attr name="circleColor" format="color" />
+        <attr name="radiusCircle" format="integer"/>
+    </declare-styleable>
+</resources>
