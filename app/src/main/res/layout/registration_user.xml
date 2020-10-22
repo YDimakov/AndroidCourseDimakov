@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlue">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="387dp"
+        android:layout_height="514dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/user_style_orange_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/registration"
+            android:layout_width="209dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:text="Регистрация пользователя"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/registrationEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_below="@+id/registrationName"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/line_style_orange_rectangle"
+            android:gravity="center"
+            android:hint="Почта"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/registrationPassword1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/registrationPhone"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/line_style_orange_rectangle"
+            android:gravity="center"
+            android:hint="Пароль"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/registrationPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/registrationPassword1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/line_style_orange_rectangle"
+            android:gravity="center"
+            android:hint="Подтверждение пароля"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/registrationName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/registration"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/line_style_orange_rectangle"
+            android:gravity="center"
+            android:hint="Ваше имя"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/registrationPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/registrationEmail"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/line_style_orange_rectangle"
+            android:gravity="center"
+            android:hint="Номер телефона"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/registrationButton"
+            android:layout_width="164dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/registrationPassword2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="109dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="107dp"
+            android:background="@drawable/text_style_blue_rectangle"
+            android:text="Зарегистрировать"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressbarRegistrationUser"
+            android:layout_width="59dp"
+            android:layout_height="49dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="419dp"
+            android:layout_marginEnd="42dp"
+            android:indeterminate="false"
+            android:outlineSpotShadowColor="@color/colorWhite"
+            android:theme="@style/CircularProgress"
+            tools:ignore="MissingConstraints" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

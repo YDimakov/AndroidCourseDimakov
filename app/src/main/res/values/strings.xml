@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">My Project</string>-->
+    <string name="text_activity">В доме должны быть животные, тогда будет видно, что там живут добрые люди</string>
+    <string name="add_animal">Найти друга</string>
+    <string name="all_animals">Cписок всех животных</string>
+    <string name="lost_animals">Потеряшки</string>
+    <string name="choice">Сделайте выбор</string>
+    <string name="name_animal">Имя животного</string>
+    <string name="age_animal">Возраст животного</string>
+    <string name="text_search">Внесите нужную иформацию:</string>
+    <string name="namePerson">Имя пользователя</string>
+    <string name="color_animal">Цвет животного</string>
+    <string name="search_animal_text">Добро пожаловать в приложение для поиска животных</string>
+    <string name="info_text">Данная программа создана для помощи в поисках домашних животных.</string>
+    <string-array name="animals_array">
+        <item> Кот </item>
+        <item> Собака </item>
+    </string-array>
+    <string-array name="animals_array_age">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+        <item> 11 </item>
+        <item> 12 </item>
+        <item> 13 </item>
+        <item> 14 </item>
+        <item> 15 </item>
+        <item> 16 </item>
+        <item> 17 </item>
+        <item> 18 </item>
+        <item> 19 </item>
+        <item> 20 </item>
+        <item> 21 </item>
+        <item> 22 </item>
+        <item> 23 </item>
+        <item> 24 </item>
+        <item> 25 </item>
+        <item> 26 </item>
+        <item> 27 </item>
+        <item> 28 </item>
+        <item> 29 </item>
+        <item> 30 </item>
+    </string-array>
+    <string-array name="animals_array_color">
+        <item> Белый </item>
+        <item> Черный </item>
+        <item> Серый </item>
+        <item> Коричневый </item>
+    </string-array>
+</resources>

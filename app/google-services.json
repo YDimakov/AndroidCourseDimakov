@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "519764021363",
+    "firebase_url": "https://search-for-favorite-animals.firebaseio.com",
+    "project_id": "search-for-favorite-animals",
+    "storage_bucket": "search-for-favorite-animals.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519764021363:android:aed1ecbdc1dcbf7da49a06",
+        "android_client_info": {
+          "package_name": "com.example.myproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519764021363-vir1gr1lqpmagmlqlja9f3ku60m534ck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myproject",
+            "certificate_hash": "0fa6f8ef690694f57a1785dbd9eb4bc02a1e1439"
+          }
+        },
+        {
+          "client_id": "519764021363-pislv600jddg9tkd3bk5g79pcalugsi9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0cjXHdpRsw0iJ-icCHvkzj0NLULRFbZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519764021363-pislv600jddg9tkd3bk5g79pcalugsi9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

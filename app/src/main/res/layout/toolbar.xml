@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/colorBlue"
+    android:theme="@style/ThemeOverlay.AppCompat">
+
+    <TextView
+        android:id="@+id/namePerson"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="@string/namePerson"
+        android:gravity="start|center_vertical"
+        android:textSize="25sp"/>
+
+    <ImageButton
+        android:id="@+id/personId"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_baseline_person_24"
+       android:background="@color/colorBlue"/>
+
+</androidx.appcompat.widget.Toolbar>
