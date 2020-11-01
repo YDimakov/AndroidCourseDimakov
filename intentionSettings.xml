@@ -2,5 +2,6 @@
   <component name="IntentionManagerSettings">
     <ignoreAction name="Kotlin/Add import for member" />
     <ignoreAction name="Kotlin/Introduce import alias" />
+    <ignoreAction name="Android/Convert to data binding layout" />
   </component>
 </application>
