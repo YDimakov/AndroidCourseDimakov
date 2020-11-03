@@ -1,6 +1,6 @@
 <application>
   <component name="HttpConfigurable">
-    <option name="PROXY_PORT" value="3128" />
+    <option name="PROXY_PORT" value="0" />
     <option name="PROXY_AUTHENTICATION" value="true" />
   </component>
 </application>
