@@ -13,10 +13,12 @@
       <mapping ext="bin" type="PLAIN_TEXT" />
       <mapping ext="lock" type="PLAIN_TEXT" />
       <mapping pattern="ContactDB-shm" type="SQL" />
+      <mapping pattern="contactsDB-wal" type="SQL" />
+      <mapping pattern="contactsDB-shm" type="SQL" />
       <mapping pattern="ContactDB-wal" type="SQLite" />
-      <mapping pattern="activity_two" type="XML" />
       <mapping pattern="editing_contacts" type="XML" />
       <mapping pattern="added_contacts" type="XML" />
+      <mapping pattern="activity_two" type="XML" />
       <mapping pattern="my_view" type="XML" />
       <mapping ext="xml " type="XML" />
     </extensionMap>
