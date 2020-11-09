@@ -1,6 +1,7 @@
 package com.example.weather.factory;
 
 import android.app.Application;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
@@ -17,13 +18,13 @@ public class MainFactoryWeather extends ViewModelProvider.AndroidViewModelFactor
     private String units;
     private ArrayList<Weather> weathersArray;
 
-    public MainFactoryWeather(@NonNull Application application, String city, String units, ArrayList<Weather> weathersArray) {
+    public MainFactoryWeather(@NonNull Application application, String city, String units
+            , ArrayList<Weather> weathersArray) {
         super(application);
         this.application = application;
         this.city = city;
         this.units = units;
         this.weathersArray = weathersArray;
-
     }
 
     @NonNull

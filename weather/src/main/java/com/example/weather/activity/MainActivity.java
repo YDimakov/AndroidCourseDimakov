@@ -3,16 +3,22 @@ package com.example.weather.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,14 +31,12 @@ import com.example.weather.data.AdapterWeather;
 import com.example.weather.factory.MainFactoryWeather;
 import com.example.weather.factory.MainFactoryWeatherNow;
 import com.example.weather.model.Weather;
-import com.example.weather.viewModel.WeatherNowViewModel;
 import com.example.weather.viewModel.WeatherViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.CompletableFuture;
 
 import io.reactivex.annotations.NonNull;
 
@@ -49,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String LOG_TAG = "tag";
     private AdapterWeather adapterWeather;
     private ArrayList<Weather> weathersArray;
-    private ImageView imageView;
     private TextView cityWeatherToday;
     private TextView tempWeatherToday;
     private TextView timeNow;
+    private WeatherViewModel viewModelWeather;
 
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,44 +66,47 @@ public class MainActivity extends AppCompatActivity {
         String city = mSettings.getString(APP_PREFERENCES_CITY, "Kiev");
         weathersArray = new ArrayList<>();
         timeNow = findViewById(R.id.timeNow);
-        imageView = findViewById(R.id.imageViewWeatherToday);
+
         cityWeatherToday = findViewById(R.id.cityWeatherToday);
         tempWeatherToday = findViewById(R.id.tempWeatherToday);
         int varTempWeather = mSettings.getInt(APP_PREFERENCES_VARIABLE, 0);
 
-        if (city != null) {
-            if (varTempWeather == 1) {
-                WeatherViewModel viewModelWeather = new ViewModelProvider(this // данные с одного API
+        if (varTempWeather == 1) {
+            if (city != null) {
+                viewModelWeather = new ViewModelProvider(this // данные с одного API
                         , new MainFactoryWeather(new Application(), city, API_UNITS_MODE_IMPERIAL, weathersArray))
                         .get(WeatherViewModel.class);
-                viewModelWeather.getDataWeather()
+                viewModelWeather.getLiveDataArrayList()
                         .observe(this, weathers ->
                                 weathersArray = weathers);
-                WeatherNowViewModel viewModelWeatherNow = new ViewModelProvider// данные с другого API
-                        (this, new MainFactoryWeatherNow(new Application(), city, API_UNITS_MODE_IMPERIAL)).get(WeatherNowViewModel.class);
+                viewModelWeather = new ViewModelProvider// данные с другого API
+                        (this, new MainFactoryWeatherNow(new Application(), city,
+                                API_UNITS_MODE_IMPERIAL)).get(WeatherViewModel.class);
 
-                viewModelWeatherNow.getWeatherNow().observe(this, strings -> {
-                    setIconWeatherNow(strings[0]);
-                    tempWeatherToday.setText(strings[1] + "F ");
-                    cityWeatherToday.setText(strings[2]);
-                });
-            } else {
-                WeatherViewModel viewModelWeather = new ViewModelProvider(this// данные с одного API
-                        , new MainFactoryWeather(new Application(), city, API_UNITS_MODE_METRIC, weathersArray))
-                        .get(WeatherViewModel.class);
-                viewModelWeather.getDataWeather()
-                        .observe(this, weathers -> weathersArray = weathers);
+                viewModelWeather.getLiveDataString().observe(this, strings -> {
+                    tempWeatherToday.setText(strings[0] + "F ");
+                    cityWeatherToday.setText(strings[1]);
 
-                WeatherNowViewModel viewModelWeatherNow = new ViewModelProvider// данные с другого API
-                        (this, new MainFactoryWeatherNow(new Application(), city, API_UNITS_MODE_METRIC)).get(WeatherNowViewModel.class);
 
-                viewModelWeatherNow.getWeatherNow().observe(this, strings -> {
-                    setIconWeatherNow(strings[0]);
-                    tempWeatherToday.setText(strings[1] + "°C ");
-                    cityWeatherToday.setText(strings[2]);
                 });
             }
+        } else {
+            if (city != null) {
+                viewModelWeather = new ViewModelProvider(this// данные с одного API
+                        , new MainFactoryWeather(new Application(), city, API_UNITS_MODE_METRIC, weathersArray))
+                        .get(WeatherViewModel.class);
+                viewModelWeather.getLiveDataArrayList()
+                        .observe(this, weathers -> weathersArray = weathers);
 
+                viewModelWeather = new ViewModelProvider// данные с другого API
+                        (this, new MainFactoryWeatherNow(new Application(), city
+                                , API_UNITS_MODE_METRIC)).get(WeatherViewModel.class);
+
+                viewModelWeather.getLiveDataString().observe(this, strings -> {
+                    tempWeatherToday.setText(strings[0] + "°C ");
+                    cityWeatherToday.setText(strings[1]);
+                });
+            }
         }
 
         initRecyclerView();
@@ -114,15 +119,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        CompletableFuture.runAsync(() -> {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            adapterWeather.notifyDataSetChanged();
-        });
+        adapterWeather.notifyDataSetChanged();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -166,42 +165,4 @@ public class MainActivity extends AppCompatActivity {
         timeNow.setText("Last updated " + formatForDateNow.format(dateNow));
     }
 
-    private void setIconWeatherNow(String weatherIconNow) {
-        if (weatherIconNow != null) {
-            switch (weatherIconNow) {
-                case "01d":
-                case "01n":
-                    imageView.setImageResource(R.drawable.d01d);
-                    break;
-                case "02d":
-                case "02n":
-                    imageView.setImageResource(R.drawable.d02d);
-                    break;
-                case "03d":
-                case "03n":
-                    imageView.setImageResource(R.drawable.d03d);
-                    break;
-                case "04d":
-                case "04n":
-                    imageView.setImageResource(R.drawable.d04d);
-                    break;
-                case "09d":
-                case "09n":
-                    imageView.setImageResource(R.drawable.d09d);
-                    break;
-                case "10d":
-                case "10n":
-                    imageView.setImageResource(R.drawable.d10d);
-                    break;
-                case "11d":
-                case "11n":
-                    imageView.setImageResource(R.drawable.d11d);
-                    break;
-                case "13d":
-                case "13n":
-                    imageView.setImageResource(R.drawable.d13d);
-                    break;
-            }
-        }
-    }
 }

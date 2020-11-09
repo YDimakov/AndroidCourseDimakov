@@ -12,13 +12,14 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.example.weather.R;
 
 public class SettingsActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     public static final String APP_PREFERENCES = "mysettings";
     public static final String APP_PREFERENCES_VARIABLE = "variable";
     private SharedPreferences mSettings;
-    int variable;
+    private int variable;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,11 +29,7 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
         Switch aSwitch = findViewById(R.id.switchTemp);
         aSwitch.setOnCheckedChangeListener(this);
         int varSwitch = mSettings.getInt(APP_PREFERENCES_VARIABLE, 0);
-        if (varSwitch == 1) {
-            aSwitch.setChecked(true);
-        } else {
-            aSwitch.setChecked(false);
-        }
+        aSwitch.setChecked(varSwitch == 1);
         Button buttonOk = findViewById(R.id.buttonOk);
         buttonOk.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
@@ -52,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
         editor.putInt(APP_PREFERENCES_VARIABLE, variable);
         editor.apply();
 
-        Toast.makeText(this, "Отслеживание переключения: " + (isChecked ? "on" : "off"),
+        Toast.makeText(this, "Отслеживание переключения: " + (isChecked ? "Вкл" : "Выкл"),
                 Toast.LENGTH_SHORT).show();
     }
 }
