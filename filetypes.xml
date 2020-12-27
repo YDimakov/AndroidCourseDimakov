@@ -2,23 +2,23 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping ext="webp" type="Image" />
-      <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="main.kts" type="Kotlin" />
+      <mapping ext="gradle.kts" type="Kotlin" />
       <mapping pattern="menu" type="PLAIN_TEXT" />
       <mapping pattern="historyExternalStorage" type="PLAIN_TEXT" />
       <mapping pattern="334441721-2104269760" type="PLAIN_TEXT" />
       <mapping pattern="ContactDB" type="PLAIN_TEXT" />
       <mapping pattern="contactsDB" type="PLAIN_TEXT" />
       <mapping pattern="contactsDB-journal" type="PLAIN_TEXT" />
-      <mapping ext="bin" type="PLAIN_TEXT" />
       <mapping ext="lock" type="PLAIN_TEXT" />
+      <mapping ext="bin" type="PLAIN_TEXT" />
       <mapping pattern="ContactDB-shm" type="SQL" />
       <mapping pattern="contactsDB-wal" type="SQL" />
       <mapping pattern="contactsDB-shm" type="SQL" />
       <mapping pattern="ContactDB-wal" type="SQLite" />
+      <mapping pattern="activity_two" type="XML" />
       <mapping pattern="editing_contacts" type="XML" />
       <mapping pattern="added_contacts" type="XML" />
-      <mapping pattern="activity_two" type="XML" />
       <mapping pattern="my_view" type="XML" />
       <mapping ext="xml " type="XML" />
     </extensionMap>
