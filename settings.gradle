@@ -1,2 +1,4 @@
+include ':contactrequest'
+include ':contactsinroomlibraryjava'
 include ':app'
 rootProject.name = "DimakovHW1"
