@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/imageViewWeatherToday"
+        android:layout_width="wrap_content"
+        android:layout_height="127dp"
+        android:layout_above="@+id/cityWeatherToday"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/cityWeatherToday"
+        android:layout_width="221dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/timeNow"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWeatherToday"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tempWeatherToday"
+        android:layout_width="147dp"
+        android:layout_height="125dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cityWeatherToday"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWeatherToday"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/timeNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
+
+</RelativeLayout>
